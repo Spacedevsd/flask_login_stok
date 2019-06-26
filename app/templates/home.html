@@ -1,0 +1,14 @@
+{% if current_user.is_authenticated %}
+    <div>
+        <h1>{{ current_user.name }}</h1>
+        <p>Esste texto aparece caso você esteja logado.</p>
+        <a href="{{ url_for('logout') }}">Sair</a>
+    </div>
+
+{% else %}
+    <div>
+        <h1>Visitante</h1>
+        <p>Esste texto aparece caso você não esteja logado.</p>
+    </div>
+{% endif %}
+
